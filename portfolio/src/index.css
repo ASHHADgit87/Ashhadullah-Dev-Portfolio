@@ -1,0 +1,33 @@
+@import 'tailwindcss';
+
+:root {
+  --bg:      #0E1015;
+  --surface: #161820;
+  --accent:  #00FFB2;
+  --border:  #2A2D3A;
+  --dim:     #8A8FA8;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: auto; 
+}
+
+body {
+  background-color: var(--bg);
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::-webkit-scrollbar { width: 0; background: transparent; }
+
+::selection {
+  background: rgba(0, 255, 178, 0.2);
+  color: #00FFB2;
+}
