@@ -2,7 +2,17 @@ export interface Project {
   id: number;
   title: string;
   stack: string[];
-  category: ("All" | "SaaS" | "MERN" | "PERN" | "Firebase" | "Supabase")[];
+  category: (
+    | "SaaS"
+    | "MERN"
+    | "PERN"
+    | "Firebase"
+    | "Supabase"
+    | "AI"
+    | "3D"
+    | "Game"
+    | "Extension"
+  )[];
   description: string;
   features: string[];
   liveUrl: string;
