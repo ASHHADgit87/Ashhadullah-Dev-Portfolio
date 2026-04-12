@@ -192,11 +192,11 @@ export const SOCIALS = {
 };
 
 export const NAV_LINKS = [
-  "hero",
-  "projects",
-  "about",
-  "skills",
-  "contact",
+  { label: "Home", id: "hero" },
+  { label: "Projects", id: "projects" },
+  { label: "About", id: "about" },
+  { label: "Skills", id: "skills" },
+  { label: "Contact", id: "contact" },
 ] as const;
 
 export const STACK_HIGHLIGHTS = [

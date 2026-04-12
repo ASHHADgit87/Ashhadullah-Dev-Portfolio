@@ -10,7 +10,7 @@ export const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  const navLinks = NAV_LINKS.filter((link) => link !== "contact");
+  const navLinks = NAV_LINKS.filter((link) => link.id !== "contact");
 
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -25,7 +25,9 @@ export const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = NAV_LINKS.map((id) => document.getElementById(id));
+      const sections = NAV_LINKS.map((item) =>
+        document.getElementById(item.id)
+      );
 
       const scrollPos = window.scrollY + window.innerHeight / 3;
 
@@ -70,19 +72,19 @@ export const Navbar = () => {
 
           <ul className="hidden md:flex items-center gap-10 text-base font-semibold">
             {navLinks.map((link) => {
-              const isActive = activeSection === link;
+              const isActive = activeSection === link.id;
 
               return (
-                <li key={link}>
+                <li key={link.id}>
                   <button
-                    onClick={() => scrollTo(link)}
+                    onClick={() => scrollTo(link.id)}
                     className={`text-sm capitalize transition-all duration-300 ${
                       isActive
                         ? "text-[#7C3AED]"
                         : "text-white/60 hover:text-white"
                     }`}
                   >
-                    {link}
+                    {link.label}
                   </button>
                 </li>
               );
@@ -130,8 +132,11 @@ export const Navbar = () => {
 
           <div className="flex flex-col gap-6 text-xl text-white font-semibold">
             {navLinks.map((link) => (
-              <button key={link} onClick={() => scrollTo(link)}>
-                {link}
+              <button
+                key={link.id}
+                onClick={() => scrollTo(link.id)}
+              >
+                {link.label}
               </button>
             ))}
 
