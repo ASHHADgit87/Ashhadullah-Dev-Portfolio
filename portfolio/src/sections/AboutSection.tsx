@@ -8,11 +8,7 @@ export const AboutSection = () => {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section
-      id="about"
-      ref={ref}
-      className="py-32 px-8 md:px-20 bg-[#0B0B12] relative"
-    >
+    <section id="about" ref={ref} className="py-32 px-8 md:px-20  relative">
       <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] -translate-x-1/2 -translate-y-1/2 bg-[#7C3AED]/10 blur-[120px] rounded-full pointer-events-none" />
 
       <motion.div

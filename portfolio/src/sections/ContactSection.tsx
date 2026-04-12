@@ -43,12 +43,8 @@ export const ContactSection = () => {
     "w-full bg-[#151528] border border-[#7C3AED]/10 rounded-xl px-4 py-3 text-white text-sm placeholder:text-white/25 focus:outline-none focus:border-[#7C3AED]/50 transition-all backdrop-blur-md";
 
   return (
-    <section
-      id="contact"
-      ref={ref}
-      className="py-32 px-8 md:px-20 bg-[#0B0B12] relative"
-    >
-      <div className="absolute top-1/2 left-1/2 w-[500px] h-[500px] -translate-x-1/2 -translate-y-1/2 bg-[#15803D]/10 blur-[120px] rounded-full pointer-events-none" />
+    <section id="contact" ref={ref} className="py-32 px-8 md:px-20  relative">
+      <div className="absolute top-1/2 left-1/2 w-[500px] h-[500px] -translate-x-1/2 -translate-y-1/2  blur-[120px] rounded-full pointer-events-none" />
 
       <motion.div
         className="max-w-xl mx-auto flex flex-col gap-10 relative z-10"
