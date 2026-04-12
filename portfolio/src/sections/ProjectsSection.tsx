@@ -7,32 +7,35 @@ import { ProjectModal } from "@/sections/ProjectModal";
 export const ProjectsSection = () => {
   const [active, setActive] = useState<string>("All");
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-100px" });
+
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const hasAnimated = useRef(false);
 
   const filtered =
     active === "All"
       ? PROJECTS
       : PROJECTS.filter((p) => p.category.includes(active as any));
 
+  if (isInView) {
+    hasAnimated.current = true;
+  }
+
   return (
-    <section id="projects" ref={ref} className="py-32 px-8 md:px-20 bg-[#0B0B12] ">
-      
-      {/* Background Glow */}
+    <section
+      id="projects"
+      ref={ref}
+      className="py-32 px-8 md:px-20 bg-[#0B0B12]"
+    >
       <div className="absolute inset-0 opacity-30 pointer-events-none bg-[radial-gradient(circle_at_20%_20%,rgba(124,58,237,0.08),transparent_60%),radial-gradient(circle_at_80%_30%,rgba(21,128,61,0.06),transparent_55%)]" />
 
-      {/* Header */}
       <motion.div className="max-w-6xl mx-auto flex flex-col gap-10 relative z-10">
-        
         <div>
           <span className="text-[#7C3AED] text-xs tracking-[0.2em] uppercase">
             Work
           </span>
-          <h2 className="text-4xl font-bold text-white">
-            Featured Projects
-          </h2>
+          <h2 className="text-4xl font-bold text-white">Featured Projects</h2>
         </div>
 
-        {/* Filters */}
         <div className="flex flex-wrap gap-2">
           {PROJECT_FILTERS.map((f) => (
             <button
@@ -52,12 +55,36 @@ export const ProjectsSection = () => {
           ))}
         </div>
 
-        {/* GRID */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
-          {filtered.map((p) => (
-            <div key={p.id} className="h-full">
+          {filtered.map((p, i) => (
+            <motion.div
+              key={p.id}
+              className="h-full"
+              initial={{
+                opacity: 0,
+                y: 40,
+                scale: 0.95,
+                rotateX: 10,
+              }}
+              animate={
+                hasAnimated.current
+                  ? {
+                      opacity: 1,
+                      y: 0,
+                      scale: 1,
+                      rotateX: 0,
+                    }
+                  : {}
+              }
+              transition={{
+                delay: i * 0.6,
+                duration: 1,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              style={{ perspective: 1200 }}
+            >
               <ProjectCard project={p} />
-            </div>
+            </motion.div>
           ))}
         </div>
       </motion.div>
