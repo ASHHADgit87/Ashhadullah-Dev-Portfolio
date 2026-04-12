@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { staggerContainer, fadeUp } from "@/animations/variants";
 import { Button } from "@/components/ui/Button";
 import { Mail } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
@@ -27,6 +26,27 @@ export const HeroSection = () => {
     document.body.removeChild(link);
   };
 
+  const container: any = {
+    hidden: {},
+    show: {
+      transition: {
+        staggerChildren: 0.8,
+      },
+    },
+  };
+
+  const item: any = {
+    hidden: { opacity: 0, y: 30 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: [0.25, 0.1, 0.25, 1],
+      },
+    },
+  };
+
   return (
     <section
       id="hero"
@@ -35,21 +55,21 @@ export const HeroSection = () => {
       <div className="w-full md:w-1/2 flex items-center">
         <motion.div
           className="flex flex-col gap-7 px-8 md:px-20 max-w-xl"
-          variants={staggerContainer}
+          variants={container}
           initial="hidden"
           animate="show"
         >
           <motion.p
             className="text-[#7C3AED] text-xs font-mono tracking-[0.25em] uppercase"
-            variants={fadeUp}
+            variants={item}
           >
-            Full-Stack Developer · Software Engineer Prompt Engineer · AI SaaS
+            Full-Stack Developer · Software Engineer · Prompt Engineer · AI SaaS
             Builder
           </motion.p>
 
           <motion.h1
             className="text-5xl md:text-7xl font-bold text-white leading-[1.05]"
-            variants={fadeUp}
+            variants={item}
           >
             Muhammad <br />
             <span className="text-[#7C3AED] drop-shadow-[0_0_25px_rgba(124,58,237,0.5)]">
@@ -59,13 +79,13 @@ export const HeroSection = () => {
 
           <motion.p
             className="text-white/60 text-md max-w-sm italic tracking-wide"
-            variants={fadeUp}
+            variants={item}
           >
             I help businesses build AI-powered SaaS and Web platforms, and
             automation systems using modern full-stack technologies.
           </motion.p>
 
-          <motion.div className="flex gap-4 relative z-50" variants={fadeUp}>
+          <motion.div className="flex gap-4 relative z-50" variants={item}>
             <Button variant="primary" onClick={() => scrollTo("projects")}>
               View Projects
             </Button>
@@ -77,7 +97,7 @@ export const HeroSection = () => {
 
           <motion.div
             className="flex gap-5 text-xl relative z-50"
-            variants={fadeUp}
+            variants={item}
           >
             <a
               href="mailto:ashhadullahzahir@gmail.com"
