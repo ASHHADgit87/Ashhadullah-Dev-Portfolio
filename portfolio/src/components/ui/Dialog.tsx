@@ -31,20 +31,21 @@ export const Dialog = ({ open, onClose, children }: DialogProps) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.2 }}
+          transition={{ duration: 0.25 }}
         >
           <div
-            className="absolute inset-0 bg-black/75 backdrop-blur-sm"
+            className="absolute inset-0 bg-black/80 backdrop-blur-md"
             onClick={onClose}
           />
 
           <motion.div
-            className="relative z-10 w-full max-w-2xl bg-[#161820] border border-white/10 rounded-2xl shadow-2xl overflow-hidden"
-            initial={{ scale: 0.93, opacity: 0, y: 20 }}
+            className="relative z-10 w-full max-w-2xl bg-[#151528] border border-[#7C3AED]/10 rounded-2xl shadow-[0_40px_120px_rgba(0,0,0,0.8)] overflow-hidden backdrop-blur-xl"
+            initial={{ scale: 0.92, opacity: 0, y: 30 }}
             animate={{ scale: 1, opacity: 1, y: 0 }}
-            exit={{ scale: 0.93, opacity: 0, y: 20 }}
-            transition={{ type: "spring", stiffness: 300, damping: 28 }}
+            exit={{ scale: 0.92, opacity: 0, y: 30 }}
+            transition={{ type: "spring", stiffness: 260, damping: 24 }}
           >
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(124,58,237,0.15),transparent_60%)] pointer-events-none" />
             {children}
           </motion.div>
         </motion.div>

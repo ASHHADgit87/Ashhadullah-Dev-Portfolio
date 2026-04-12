@@ -1,11 +1,9 @@
-import { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
-import { HeroScene } from '@/three/HeroScene';
-import { staggerContainer, fadeUp } from '@/animations/variants';
-import { easeCinematic } from '@/animations/transitions';
-import { Button } from '@/components/ui/Button';
-import {  Mail } from 'lucide-react';
-import { SOCIALS } from '@/lib/constants';
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { HeroScene } from "@/three/HeroScene";
+import { staggerContainer, fadeUp } from "@/animations/variants";
+import { Button } from "@/components/ui/Button";
+import { Mail } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 export const HeroSection = () => {
@@ -14,98 +12,117 @@ export const HeroSection = () => {
   useEffect(() => {
     const check = () => setIsMobile(window.innerWidth < 768);
     check();
-    window.addEventListener('resize', check);
-    return () => window.removeEventListener('resize', check);
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
   }, []);
 
   const scrollTo = (id: string) =>
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+
+  const downloadCV = () => {
+    const link = document.createElement("a");
+    link.href = "/Ashhadullah Zaheer's CV.pdf";
+    link.download = "Ashhadullah Zaheer's CV.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <section
-      id='hero'
-      className='relative min-h-screen flex items-center overflow-hidden bg-[#0E1015]'
+      id="hero"
+      className="relative min-h-screen flex items-center bg-[#0B0B12] isolate"
     >
-      {/* 3D canvas — right half desktop */}
-<div className='absolute inset-0 flex justify-end pointer-events-none'>
-  <div className='w-full md:w-[60%] h-full'>
-    <HeroScene isMobile={isMobile} />
-  </div>
-</div>
+      <div className="w-full md:w-1/2 flex items-center">
+        <motion.div
+          className="flex flex-col gap-7 px-8 md:px-20 max-w-xl"
+          variants={staggerContainer}
+          initial="hidden"
+          animate="show"
+        >
+          <motion.p
+            className="text-[#7C3AED] text-xs font-mono tracking-[0.25em] uppercase"
+            variants={fadeUp}
+          >
+            Full-Stack Developer · Software Engineer Prompt Engineer · AI SaaS
+            Builder
+          </motion.p>
 
-      {/* mobile fallback avatar image */}
-      {isMobile && (
-        <div className='absolute right-4 top-24 w-32 h-32 rounded-full bg-[#00FFB2]/10 border border-[#00FFB2]/20 flex items-center justify-center'>
-          <span className='text-4xl'>👨‍💻</span>
+          <motion.h1
+            className="text-5xl md:text-7xl font-bold text-white leading-[1.05]"
+            variants={fadeUp}
+          >
+            Muhammad <br />
+            <span className="text-[#7C3AED] drop-shadow-[0_0_25px_rgba(124,58,237,0.5)]">
+              Ashhadullah Zaheer
+            </span>
+          </motion.h1>
+
+          <motion.p
+            className="text-white/60 text-md max-w-sm italic tracking-wide"
+            variants={fadeUp}
+          >
+            I help businesses build AI-powered SaaS and Web platforms, and
+            automation systems using modern full-stack technologies.
+          </motion.p>
+
+          <motion.div className="flex gap-4 relative z-50" variants={fadeUp}>
+            <Button variant="primary" onClick={() => scrollTo("projects")}>
+              View Projects
+            </Button>
+
+            <Button variant="outline" onClick={downloadCV}>
+              Download CV
+            </Button>
+          </motion.div>
+
+          <motion.div
+            className="flex gap-5 text-xl relative z-50"
+            variants={fadeUp}
+          >
+            <a
+              href="mailto:ashhadullahzahir@gmail.com"
+              className="text-white/40 hover:text-[#7C3AED] hover:scale-110 transition-all"
+            >
+              <Mail />
+            </a>
+
+            <a
+              href="https://github.com/Ashhadgit87"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/40 hover:text-[#7C3AED] hover:scale-110 transition-all"
+            >
+              <FaGithub />
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/muhammad-ashhadullah-zaheer-41194a340/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/40 hover:text-[#7C3AED] hover:scale-110 transition-all"
+            >
+              <FaLinkedin />
+            </a>
+          </motion.div>
+        </motion.div>
+      </div>
+
+      <div className="hidden md:flex w-[90%] h-screen items-center justify-center relative z-0">
+        <div className="w-full h-full pointer-events-none">
+          <HeroScene isMobile={isMobile} />
         </div>
-      )}
+      </div>
 
-      {/* background glow */}
-      <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[#00FFB2]/3 blur-[120px] pointer-events-none' />
+      <div className="absolute top-1/2 left-1/3 w-[700px] h-[700px] -translate-x-1/2 -translate-y-1/2 bg-[#7C3AED]/10 blur-[140px]" />
+      <div className="absolute top-1/3 right-0 w-[400px] h-[400px] bg-[#15803D]/10 blur-[120px]" />
 
-      {/* text content */}
       <motion.div
-        className='relative z-10 flex flex-col gap-7 px-8 md:px-20 max-w-xl'
-        variants={staggerContainer}
-        initial='hidden'
-        animate='show'
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/30 text-xs"
+        animate={{ y: [0, 10, 0] }}
+        transition={{ repeat: Infinity, duration: 1.6 }}
       >
-        {/* eyebrow */}
-        <motion.p
-          className='text-[#00FFB2] text-xs font-mono tracking-[0.25em] uppercase'
-          variants={fadeUp}
-          transition={easeCinematic}
-        >
-          Full-Stack Developer · AI SaaS Builder
-        </motion.p>
-
-        {/* name */}
-        <motion.h1
-          className='text-5xl md:text-7xl font-bold text-white leading-[1.05] tracking-tight'
-          variants={fadeUp}
-          transition={easeCinematic}
-        >
-          Muhammad<br />
-          <span className='text-[#00FFB2]'>Ashhad</span>
-        </motion.h1>
-
-        {/* tagline */}
-        <motion.p
-          className='text-white/50 text-lg leading-relaxed max-w-sm'
-          variants={fadeUp}
-          transition={easeCinematic}
-        >
-          I build AI-powered, production-ready web applications.
-        </motion.p>
-
-        {/* CTAs */}
-        <motion.div className='flex items-center gap-4' variants={fadeUp} transition={easeCinematic}>
-          <Button variant='primary' onClick={() => scrollTo('projects')}>
-            View Projects
-          </Button>
-          <Button variant='outline' onClick={() => window.open('/cv.pdf', '_blank')}>
-            Download CV
-          </Button>
-        </motion.div>
-
-        {/* socials */}
-        <motion.div className='flex items-center gap-4' variants={fadeUp} transition={easeCinematic}>
-          <a href={SOCIALS.github}   target='_blank' rel='noreferrer' className='text-white/30 hover:text-[#00FFB2] transition-colors'><FaGithub size={18} />
-</a>
-          <a href={SOCIALS.linkedin} target='_blank' rel='noreferrer' className='text-white/30 hover:text-[#00FFB2] transition-colors'>
-<FaLinkedin size={18} /></a>
-          <a href={SOCIALS.email}                                      className='text-white/30 hover:text-[#00FFB2] transition-colors'><Mail size={18} /></a>
-        </motion.div>
-      </motion.div>
-
-      {/* scroll indicator */}
-      <motion.div
-        className='absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-white/25 text-xs'
-        animate={{ y: [0, 8, 0] }}
-        transition={{ repeat: Infinity, duration: 1.8, ease: 'easeInOut' }}
-      >
-        <span className='font-mono tracking-widest'>scroll</span>
-        <span>↓</span>
+        scroll ↓
       </motion.div>
     </section>
   );

@@ -26,17 +26,20 @@ export const HeroScene = ({ isMobile }: HeroSceneProps) => {
       style={{ background: "transparent" }}
     >
       <Suspense fallback={null}>
-        <ambientLight intensity={0.8} />
+        <ambientLight intensity={0.6} />
+
         <directionalLight
           position={[2, 3, 2]}
-          intensity={1.2}
+          intensity={1.4}
           color="#ffffff"
         />
-        <pointLight position={[-2, 2, 2]} intensity={0.5} color="#00FFB2" />
+
+        <pointLight position={[-2, 2, 2]} intensity={0.8} color="#7C3AED" />
+        <pointLight position={[2, -1, 2]} intensity={0.6} color="#15803D" />
 
         <Environment preset="city" />
 
-        <Float speed={1.2} rotationIntensity={0.1} floatIntensity={0.15}>
+        <Float speed={1.2} rotationIntensity={0.2} floatIntensity={0.2}>
           <Avatar />
         </Float>
 

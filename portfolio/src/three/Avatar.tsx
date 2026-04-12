@@ -22,6 +22,7 @@ export const Avatar = () => {
       );
     });
   }, [animations]);
+
   useEffect(() => {
     if (!actions) return;
 
@@ -31,6 +32,7 @@ export const Avatar = () => {
     Object.values(actions).forEach((a) => a?.stop());
     first.reset().fadeIn(0.5).play();
   }, [actions]);
+
   useEffect(() => {
     scene.traverse((child) => {
       const name = child.name.toLowerCase();
@@ -38,14 +40,21 @@ export const Avatar = () => {
       if (name === "head" || (name.includes("head") && !headRef.current)) {
         headRef.current = child;
       }
+
+      if ((child as THREE.Mesh).isMesh) {
+        const mesh = child as THREE.Mesh;
+        if (mesh.material) {
+          mesh.material = (mesh.material as THREE.MeshStandardMaterial).clone();
+          (mesh.material as THREE.MeshStandardMaterial).metalness = 0.3;
+          (mesh.material as THREE.MeshStandardMaterial).roughness = 0.6;
+        }
+      }
     });
   }, [scene]);
 
-  
   useFrame((_, delta) => {
     if (!headRef.current) return;
 
-    
     const rawY = (x - 0.5) * 1.5;
     const rawX = -y * 0.8;
 
@@ -62,8 +71,8 @@ export const Avatar = () => {
     <group ref={group}>
       <primitive
         object={scene}
-        scale={1.97}
-        position={[0.1, -1.8, 0]}
+        scale={2.3}
+        position={[0.1, -2.43, 0]}
         rotation={[0, 0.51, 0]}
       />
     </group>
