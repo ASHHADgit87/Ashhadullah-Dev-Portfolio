@@ -30,7 +30,7 @@ export const HeroSection = () => {
     hidden: {},
     show: {
       transition: {
-        staggerChildren: 0.8,
+        staggerChildren: 0.7,
       },
     },
   };
