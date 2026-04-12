@@ -33,7 +33,7 @@ export const PROJECTS: Project[] = [
       "Authentication system",
     ],
     liveUrl: "https://aura-ai-ashhaddev.vercel.app",
-    githubUrl: "https://github.com/ASHHADgit87",
+    githubUrl: "https://github.com/ASHHADgit87/aura-ai",
   },
 
   {
@@ -44,40 +44,40 @@ export const PROJECTS: Project[] = [
     description: "Hotel booking platform with dashboards and payments.",
     features: ["Dashboards", "Booking system", "Payments"],
     liveUrl: "https://fastlodge.vercel.app",
-    githubUrl: "https://github.com/ASHHADgit87",
+    githubUrl: "https://github.com/ASHHADgit87/Fastlodge",
   },
 
   {
     id: 4,
     title: "Chat Nova",
     stack: ["React", "Firebase"],
-    category: ["Firebase"],
+    category: ["Firebase", "SaaS"],
     description: "Real-time messaging app with media sharing.",
     features: ["Messaging", "Presence system", "Seen status"],
     liveUrl: "https://chat-nova-swart.vercel.app",
-    githubUrl: "https://github.com/ASHHADgit87",
+    githubUrl: "https://github.com/ASHHADgit87/chatnova",
   },
 
   {
     id: 5,
     title: "Burnout Radar",
     stack: ["React", "Supabase", "Chart.js"],
-    category: ["Supabase"],
+    category: ["Supabase", "SaaS"],
     description: "Developer burnout tracking system with analytics.",
     features: ["Tracking", "Analytics", "Dashboard"],
     liveUrl: "https://burnout-radar-rho.vercel.app",
-    githubUrl: "https://github.com/ASHHADgit87",
+    githubUrl: "https://github.com/ASHHADgit87/burnout-radar",
   },
 
   {
     id: 6,
-    title: "CRASS AI Scanner",
+    title: "CRASS",
     stack: ["React", "Supabase", "Tailwind", "Chart.js", "AI API"],
-    category: ["SaaS", "AI"],
+    category: ["SaaS", "AI", "Supabase"],
     description: "AI-powered code review & security scanner.",
     features: ["Code analysis", "Security scan", "Reports"],
     liveUrl: "https://crass-three.vercel.app",
-    githubUrl: "https://github.com/ASHHADgit87",
+    githubUrl: "https://github.com/ASHHADgit87/crass",
   },
 
   {
@@ -88,7 +88,7 @@ export const PROJECTS: Project[] = [
     description: "3D racing game with AI opponents.",
     features: ["3D physics", "AI opponents", "Camera system"],
     liveUrl: "https://momentum-x-gamma.vercel.app",
-    githubUrl: "https://github.com/ASHHADgit87",
+    githubUrl: "https://github.com/ASHHADgit87/momentum-x",
   },
 
   {
@@ -100,7 +100,7 @@ export const PROJECTS: Project[] = [
     features: ["Terminal detection", "Audio feedback"],
     liveUrl:
       "https://marketplace.visualstudio.com/items?itemName=ashhadullah-dev.ashhaddev-mission-faah",
-    githubUrl: "https://github.com/ASHHADgit87",
+    githubUrl: "https://github.com/ASHHADgit87/mission-faaah",
   },
 
   {
@@ -111,20 +111,35 @@ export const PROJECTS: Project[] = [
     description: "Full-stack e-commerce platform.",
     features: ["Products", "Cart system", "Orders"],
     liveUrl: "https://ashhad-e-commerce.netlify.app",
-    githubUrl: "https://github.com/ASHHADgit87",
+    githubUrl: "https://github.com/ASHHADgit87/E-commerce-Frontend",
   },
 ];
 
 export const SKILLS: Skill[] = [
-  { name: "JavaScript (ES6+)", level: "Expert", percentage: 95, group: "Languages" },
+  {
+    name: "JavaScript (ES6+)",
+    level: "Expert",
+    percentage: 95,
+    group: "Languages",
+  },
   { name: "TypeScript", level: "Advanced", percentage: 80, group: "Languages" },
   { name: "C++", level: "Intermediate", percentage: 55, group: "Languages" },
   { name: "Python", level: "Intermediate", percentage: 50, group: "Languages" },
 
   { name: "React", level: "Expert", percentage: 95, group: "Frontend" },
   { name: "Tailwind CSS", level: "Expert", percentage: 92, group: "Frontend" },
-  { name: "Framer Motion", level: "Advanced", percentage: 78, group: "Frontend" },
-  { name: "Three.js / R3F", level: "Intermediate", percentage: 60, group: "Frontend" },
+  {
+    name: "Framer Motion",
+    level: "Advanced",
+    percentage: 78,
+    group: "Frontend",
+  },
+  {
+    name: "Three.js / R3F",
+    level: "Intermediate",
+    percentage: 60,
+    group: "Frontend",
+  },
   { name: "Next.js", level: "Intermediate", percentage: 55, group: "Frontend" },
 
   { name: "Node.js", level: "Expert", percentage: 90, group: "Backend" },
@@ -140,7 +155,12 @@ export const SKILLS: Skill[] = [
   { name: "OpenAI API", level: "Advanced", percentage: 82, group: "AI" },
   { name: "Google Gemini", level: "Advanced", percentage: 78, group: "AI" },
   { name: "DeepAI", level: "Intermediate", percentage: 65, group: "AI" },
-  { name: "Anthropic Claude", level: "Intermediate", percentage: 65, group: "AI" },
+  {
+    name: "Anthropic Claude",
+    level: "Intermediate",
+    percentage: 65,
+    group: "AI",
+  },
 ];
 
 export const STATS: StatCard[] = [
@@ -171,7 +191,13 @@ export const SOCIALS = {
   email: "mailto:ashhadullah@email.com",
 };
 
-export const NAV_LINKS = ["hero", "projects", "about", "skills", "contact"] as const;
+export const NAV_LINKS = [
+  "hero",
+  "projects",
+  "about",
+  "skills",
+  "contact",
+] as const;
 
 export const STACK_HIGHLIGHTS = [
   { label: "MERN", detail: "MongoDB · Express · React · Node" },
