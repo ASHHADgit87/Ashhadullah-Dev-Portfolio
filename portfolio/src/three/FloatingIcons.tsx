@@ -8,30 +8,30 @@ type IconItem = {
 const LEFT_ICONS: IconItem[] = [
   {
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
-    pos: [-2.2, 1.8, -2],
+    pos: [-2.7, 1.8, -2],
   },
   {
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
-    pos: [-2.3, 0, -2],
+    pos: [-2.8, 0, -2],
   },
   {
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
-    pos: [-2.2, -1.8, -2],
+    pos: [-2.7, -1.8, -2],
   },
 ];
 
 const RIGHT_ICONS: IconItem[] = [
   {
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-    pos: [2.6, 1.8, -2.5],
+    pos: [2.2, 1.8, -2.5],
   },
   {
     src: "https://nodejs.org/static/images/logo.svg",
-    pos: [2.7, 0.0, -2.6],
+    pos: [2.3, 0.0, -2.6],
   },
   {
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
-    pos: [2.6, -1.8, -2.5],
+    pos: [2.2, -1.8, -2.5],
   },
 ];
 
