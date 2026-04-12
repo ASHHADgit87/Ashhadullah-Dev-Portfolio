@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { HeroScene } from "@/three/HeroScene";
 import { staggerContainer, fadeUp } from "@/animations/variants";
 import { Button } from "@/components/ui/Button";
 import { Mail } from "lucide-react";
@@ -107,23 +106,6 @@ export const HeroSection = () => {
           </motion.div>
         </motion.div>
       </div>
-
-      <div className="hidden md:flex w-[90%] h-screen items-center justify-center relative z-0">
-        <div className="w-full h-full pointer-events-none">
-          <HeroScene isMobile={isMobile} />
-        </div>
-      </div>
-
-      <div className="absolute top-1/2 left-1/3 w-[700px] h-[700px] -translate-x-1/2 -translate-y-1/2 bg-[#7C3AED]/10 blur-[140px]" />
-      <div className="absolute top-1/3 right-0 w-[400px] h-[400px] bg-[#15803D]/10 blur-[120px]" />
-
-      <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/30 text-xs"
-        animate={{ y: [0, 10, 0] }}
-        transition={{ repeat: Infinity, duration: 1.6 }}
-      >
-        scroll ↓
-      </motion.div>
     </section>
   );
 };
