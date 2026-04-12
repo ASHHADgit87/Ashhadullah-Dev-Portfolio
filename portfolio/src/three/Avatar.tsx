@@ -73,7 +73,7 @@ export const Avatar = () => {
         object={scene}
         scale={2.3}
         position={[0.1, -2.43, 0]}
-        rotation={[0, 0.51, 0]}
+        rotation={[0, 0.56, 0]}
       />
     </group>
   );
