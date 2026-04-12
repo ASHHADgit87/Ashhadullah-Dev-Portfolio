@@ -22,7 +22,7 @@ export const SkillsSection = () => {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="skills" ref={ref} className="py-32 px-8 md:px-20 bg-[#0B0B12]">
+    <section id="skills" ref={ref} className="py-32 px-8 md:px-20 ">
       <motion.div
         className="max-w-4xl mx-auto flex flex-col gap-16"
         variants={sectionReveal}

@@ -21,13 +21,7 @@ export const ProjectsSection = () => {
   }
 
   return (
-    <section
-      id="projects"
-      ref={ref}
-      className="py-32 px-8 md:px-20 bg-[#0B0B12]"
-    >
-      <div className="absolute inset-0 opacity-30 pointer-events-none bg-[radial-gradient(circle_at_20%_20%,rgba(124,58,237,0.08),transparent_60%),radial-gradient(circle_at_80%_30%,rgba(21,128,61,0.06),transparent_55%)]" />
-
+    <section id="projects" ref={ref} className="py-32 px-8 md:px-20">
       <motion.div className="max-w-6xl mx-auto flex flex-col gap-10 relative z-10">
         <div>
           <span className="text-[#7C3AED] text-xs tracking-[0.2em] uppercase">
