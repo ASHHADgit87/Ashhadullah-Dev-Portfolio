@@ -1,118 +1,130 @@
 import type { Project, Skill, StatCard } from "@/types/project.types";
+
 export const PROJECTS: Project[] = [
   {
     id: 1,
     title: "Prism AI",
-    stack: ["PostgreSQL", "Express", "React", "Node", "TypeScript", "OpenAI"],
-    category: ["PERN", "SaaS"],
+    stack: ["PostgreSQL", "Express", "React", "Node", "TypeScript"],
+    category: ["PERN", "SaaS", "AI"],
     description:
       "Prompt → working website frontend in seconds. Credit-based SaaS with full version control.",
     features: [
       "Prompt → working website frontend in seconds",
       "Credit-based usage tracking",
-      "Version control with one-click rollback",
-      "Visual editor: text, CSS, classes in live iframe",
-      "Multi-device preview: Desktop / Tablet / Mobile",
+      "Version control with rollback",
+      "Live visual editor",
+      "Multi-device preview",
     ],
     liveUrl: "https://prism-ai-ashhaddev.vercel.app",
-    githubUrl: "https://github.com/ASHHADgit87",
+    githubUrl: "https://github.com/ASHHADgit87/prism-ai",
   },
+
   {
     id: 2,
     title: "Aura AI",
-    stack: [
-      "MongoDB",
-      "Express",
-      "React",
-      "Node",
-      "Three.js",
-      "OpenAI",
-      "DeepAI",
-    ],
-    category: ["MERN", "SaaS"],
+    stack: ["MongoDB", "Express", "React", "Node", "Three.js", "OpenAI"],
+    category: ["MERN", "SaaS", "AI", "3D"],
     description:
-      "8 AI tools in one dashboard — multi-API orchestration with a 3D animated UI.",
+      "8 AI tools in one dashboard with 3D UI and multi-API orchestration.",
     features: [
-      "8 AI tools in one dashboard",
-      "5+ third-party AI APIs integrated",
-      "Three.js 3D animated bubble background",
-      "JWT + bcrypt + token expiry + auto-logout",
+      "AI tools dashboard",
+      "Multiple AI APIs",
+      "3D animated UI",
+      "Authentication system",
     ],
     liveUrl: "https://aura-ai-ashhaddev.vercel.app",
     githubUrl: "https://github.com/ASHHADgit87",
   },
+
   {
     id: 3,
     title: "FastLodge",
-    stack: ["MongoDB", "Express", "React", "Node", "Stripe", "Clerk"],
+    stack: ["MongoDB", "Express", "React", "Node"],
     category: ["MERN", "SaaS"],
-    description:
-      "Hotel booking platform with dual-role dashboards and live Stripe payments.",
-    features: [
-      "Dual-role: customer + vendor dashboards",
-      "Stripe payment + webhook handling",
-      "Real-time room availability toggle",
-    ],
+    description: "Hotel booking platform with dashboards and payments.",
+    features: ["Dashboards", "Booking system", "Payments"],
     liveUrl: "https://fastlodge.vercel.app",
     githubUrl: "https://github.com/ASHHADgit87",
   },
+
   {
     id: 4,
     title: "Chat Nova",
-    stack: ["React", "Firebase", "Firestore", "Cloudinary", "TypeScript"],
+    stack: ["React", "Firebase"],
     category: ["Firebase"],
-    description:
-      "Real-time messaging with instant text, image and video — live presence tracking.",
-    features: [
-      "Instant text, image, video messaging via Firestore",
-      "Live presence tracking + message-seen status",
-      "Three-panel responsive UI",
-    ],
+    description: "Real-time messaging app with media sharing.",
+    features: ["Messaging", "Presence system", "Seen status"],
     liveUrl: "https://chat-nova-swart.vercel.app",
     githubUrl: "https://github.com/ASHHADgit87",
   },
+
   {
     id: 5,
     title: "Burnout Radar",
-    stack: ["React", "Supabase", "Chart.js", "TypeScript"],
+    stack: ["React", "Supabase", "Chart.js"],
     category: ["Supabase"],
-    description:
-      "Developer burnout tracker — daily logs, 5+ chart types, dark/light theme.",
-    features: [
-      "Daily log: energy, focus, frustration, coding hours",
-      "5+ Chart.js chart types with scroll-triggered fill",
-      "Light/dark theme toggle",
-    ],
+    description: "Developer burnout tracking system with analytics.",
+    features: ["Tracking", "Analytics", "Dashboard"],
     liveUrl: "https://burnout-radar-rho.vercel.app",
+    githubUrl: "https://github.com/ASHHADgit87",
+  },
+
+  {
+    id: 6,
+    title: "CRASS AI Scanner",
+    stack: ["React", "Supabase", "Tailwind", "Chart.js", "AI API"],
+    category: ["SaaS", "AI"],
+    description: "AI-powered code review & security scanner.",
+    features: ["Code analysis", "Security scan", "Reports"],
+    liveUrl: "https://crass-three.vercel.app",
+    githubUrl: "https://github.com/ASHHADgit87",
+  },
+
+  {
+    id: 7,
+    title: "MomentumX",
+    stack: ["React", "Three.js"],
+    category: ["3D", "Game"],
+    description: "3D racing game with AI opponents.",
+    features: ["3D physics", "AI opponents", "Camera system"],
+    liveUrl: "https://momentum-x-gamma.vercel.app",
+    githubUrl: "https://github.com/ASHHADgit87",
+  },
+
+  {
+    id: 8,
+    title: "Mission FAAAH",
+    stack: ["TypeScript", "VS Code API"],
+    category: ["Extension"],
+    description: "VS Code extension with sound feedback.",
+    features: ["Terminal detection", "Audio feedback"],
+    liveUrl:
+      "https://marketplace.visualstudio.com/items?itemName=ashhadullah-dev.ashhaddev-mission-faah",
+    githubUrl: "https://github.com/ASHHADgit87",
+  },
+
+  {
+    id: 9,
+    title: "E-Commerce Platform",
+    stack: ["PostgreSQL", "Express", "React", "Node"],
+    category: ["PERN"],
+    description: "Full-stack e-commerce platform.",
+    features: ["Products", "Cart system", "Orders"],
+    liveUrl: "https://ashhad-e-commerce.netlify.app",
     githubUrl: "https://github.com/ASHHADgit87",
   },
 ];
 
 export const SKILLS: Skill[] = [
-  {
-    name: "JavaScript (ES6+)",
-    level: "Expert",
-    percentage: 95,
-    group: "Languages",
-  },
+  { name: "JavaScript (ES6+)", level: "Expert", percentage: 95, group: "Languages" },
   { name: "TypeScript", level: "Advanced", percentage: 80, group: "Languages" },
   { name: "C++", level: "Intermediate", percentage: 55, group: "Languages" },
   { name: "Python", level: "Intermediate", percentage: 50, group: "Languages" },
 
   { name: "React", level: "Expert", percentage: 95, group: "Frontend" },
   { name: "Tailwind CSS", level: "Expert", percentage: 92, group: "Frontend" },
-  {
-    name: "Framer Motion",
-    level: "Advanced",
-    percentage: 78,
-    group: "Frontend",
-  },
-  {
-    name: "Three.js / R3F",
-    level: "Intermediate",
-    percentage: 60,
-    group: "Frontend",
-  },
+  { name: "Framer Motion", level: "Advanced", percentage: 78, group: "Frontend" },
+  { name: "Three.js / R3F", level: "Intermediate", percentage: 60, group: "Frontend" },
   { name: "Next.js", level: "Intermediate", percentage: 55, group: "Frontend" },
 
   { name: "Node.js", level: "Expert", percentage: 90, group: "Backend" },
@@ -128,16 +140,11 @@ export const SKILLS: Skill[] = [
   { name: "OpenAI API", level: "Advanced", percentage: 82, group: "AI" },
   { name: "Google Gemini", level: "Advanced", percentage: 78, group: "AI" },
   { name: "DeepAI", level: "Intermediate", percentage: 65, group: "AI" },
-  {
-    name: "Anthropic Claude",
-    level: "Intermediate",
-    percentage: 65,
-    group: "AI",
-  },
+  { name: "Anthropic Claude", level: "Intermediate", percentage: 65, group: "AI" },
 ];
 
 export const STATS: StatCard[] = [
-  { value: "9+", label: "Projects" },
+  { value: "10+", label: "Projects" },
   { value: "6", label: "Stacks" },
   { value: "3", label: "AI Certs" },
   { value: "50+", label: "AI Tools" },
@@ -150,9 +157,13 @@ export const PROJECT_FILTERS = [
   "PERN",
   "Firebase",
   "Supabase",
+  "AI",
+  "3D",
+  "Game",
+  "Extension",
 ] as const;
 
-export const BIO = `I'm Ashhad — a 20-year-old full-stack developer from Karachi, Pakistan, studying Software Engineering at NED University. I specialise in building AI-integrated SaaS platforms using MERN and PERN, with a strong focus on LLM integration, scalable REST APIs, and clean frontend architecture. I don't just learn frameworks — I ship products with them.`;
+export const BIO = `I'm Ashhad — a full-stack developer from Karachi, Pakistan, building AI-powered SaaS and modern web systems with MERN & PERN stacks.`;
 
 export const SOCIALS = {
   github: "https://github.com/ASHHADgit87",
@@ -160,24 +171,18 @@ export const SOCIALS = {
   email: "mailto:ashhadullah@email.com",
 };
 
-export const NAV_LINKS = [
-  "hero",
-  "projects",
-  "about",
-  "skills",
-  "contact",
-] as const;
+export const NAV_LINKS = ["hero", "projects", "about", "skills", "contact"] as const;
 
 export const STACK_HIGHLIGHTS = [
   { label: "MERN", detail: "MongoDB · Express · React · Node" },
   { label: "PERN", detail: "PostgreSQL · Express · React · Node" },
-  { label: "Firebase", detail: "React TSX · Firebase Auth · Firestore" },
-  { label: "Supabase", detail: "React TSX · Supabase Auth · PostgreSQL" },
-  { label: "AI APIs", detail: "OpenAI · DeepAI · Gemini · Anthropic" },
+  { label: "Firebase", detail: "React · Firebase Auth · Firestore" },
+  { label: "Supabase", detail: "React · Supabase · PostgreSQL" },
+  { label: "AI APIs", detail: "OpenAI · DeepAI · Gemini · Claude" },
 ];
 
 export const CERTS = [
   { name: "Certified Prompt Engineer", org: "Dubai Future Foundation" },
-  { name: "Professional AI Concepts for Devs", org: "Microsoft" },
-  { name: "Intro to Generative AI Studio", org: "Google" },
+  { name: "Professional AI Concepts", org: "Microsoft" },
+  { name: "Generative AI Studio", org: "Google" },
 ];
