@@ -30,7 +30,7 @@ export const HeroSection = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center bg-[#0B0B12] isolate"
+      className="relative min-h-screen flex items-center isolate"
     >
       <div className="w-full md:w-1/2 flex items-center">
         <motion.div
