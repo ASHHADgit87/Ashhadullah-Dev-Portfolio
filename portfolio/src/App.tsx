@@ -25,28 +25,31 @@ const App = () => {
   }, []);
 
   return (
-    <SmoothScroll>
-      <CursorTrail />
-      <motion.div
-        className="fixed top-0 right-0 w-[45%] h-screen pointer-events-none z-[50] hidden md:block"
-        style={{
-          transform: `translateY(${progress * 10}px)`,
-        }}
-      >
-        <HeroScene isMobile={isMobile} />
-      </motion.div>
+    <div className="bg-[#0B0B12] min-h-screen">
+      <SmoothScroll>
+        <CursorTrail />
 
-      <div className="bg-[#0E1015] text-white min-h-screen relative z-0 overflow-hidden">
-        <Navbar />
-        <main>
-          <HeroSection />
-          <ProjectsSection />
-          <AboutSection />
-          <SkillsSection />
-          <ContactSection />
-        </main>
-      </div>
-    </SmoothScroll>
+        <motion.div
+          className="fixed top-0 right-0 w-[45%] h-screen pointer-events-none z-10 hidden md:block"
+          style={{
+            transform: `translateY(${progress * 20}px)`,
+          }}
+        >
+          <HeroScene isMobile={isMobile} />
+        </motion.div>
+
+        <div className="w-full md:w-[55%] relative z-20">
+          <Navbar />
+          <main className="bg-transparent">
+            <HeroSection />
+            <ProjectsSection />
+            <AboutSection />
+            <SkillsSection />
+            <ContactSection />
+          </main>
+        </div>
+      </SmoothScroll>
+    </div>
   );
 };
 
