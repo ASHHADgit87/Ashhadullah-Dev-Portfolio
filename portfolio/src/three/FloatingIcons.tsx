@@ -12,7 +12,7 @@ const LEFT_ICONS: IconItem[] = [
   },
   {
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
-    pos: [-2.8, 0, -2],
+    pos: [-2.6, 0, -2],
   },
   {
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
