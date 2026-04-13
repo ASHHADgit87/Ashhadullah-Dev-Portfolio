@@ -36,17 +36,16 @@ export const HeroSection = () => {
   };
 
   const item: any = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, x: 350 },
     show: {
       opacity: 1,
-      y: 0,
+      x: 0,
       transition: {
-        duration: 0.8,
-        ease: [0.25, 0.1, 0.25, 1],
+        duration: 2.5,
+        ease: [0.22, 1, 0.5, 1],
       },
     },
   };
-
   return (
     <section
       id="hero"
