@@ -1,4 +1,4 @@
-import type { Project, Skill, StatCard } from "@/types/project.types";
+import type { Project, Skill } from "@/types/project.types";
 
 export const PROJECTS: Project[] = [
   {
@@ -163,12 +163,7 @@ export const SKILLS: Skill[] = [
   },
 ];
 
-export const STATS: StatCard[] = [
-  { value: "10+", label: "Projects" },
-  { value: "6", label: "Stacks" },
-  { value: "3", label: "AI Certs" },
-  { value: "50+", label: "AI Tools" },
-];
+
 
 export const PROJECT_FILTERS = [
   "All",
@@ -183,7 +178,7 @@ export const PROJECT_FILTERS = [
   "Extension",
 ] as const;
 
-export const BIO = `I'm Ashhad — a full-stack developer from Karachi, Pakistan, building AI-powered SaaS and modern web systems with MERN & PERN stacks.`;
+
 
 export const SOCIALS = {
   github: "https://github.com/ASHHADgit87",
@@ -199,16 +194,49 @@ export const NAV_LINKS = [
   { label: "Contact", id: "contact" },
 ] as const;
 
+
+
+export const BIO = `
+Software Engineering student at NED University, Karachi.
+
+Full-stack developer specializing in MERN & PERN stacks with strong frontend and backend expertise.
+
+I build scalable AI-powered SaaS platforms, automation systems, and high-performance web applications using modern technologies.
+
+🚀 Expert in 50+ AI tools for development, productivity, and real-world automation.
+
+Focused on clean architecture, performance, and real-world problem solving.
+`;
+
+export const STATS = [
+  { value: "20+", label: "Projects Built" },
+  { value: "50+", label: "AI Tools Mastered" },
+  { value: "3+", label: "Full Stacks" },
+  { value: "100%", label: "Passion Driven" },
+];
+
 export const STACK_HIGHLIGHTS = [
-  { label: "MERN", detail: "MongoDB · Express · React · Node" },
-  { label: "PERN", detail: "PostgreSQL · Express · React · Node" },
-  { label: "Firebase", detail: "React · Firebase Auth · Firestore" },
-  { label: "Supabase", detail: "React · Supabase · PostgreSQL" },
-  { label: "AI APIs", detail: "OpenAI · DeepAI · Gemini · Claude" },
+  { label: "Frontend", detail: "React, TypeScript, Tailwind" },
+  { label: "Backend", detail: "Node, Express, REST APIs" },
+  { label: "Database", detail: "MongoDB, PostgreSQL, Firebase" },
+  { label: "Auth", detail: "JWT, Clerk, Firebase Auth" },
+  { label: "AI", detail: "LLMs, APIs, Automation Systems" },
 ];
 
 export const CERTS = [
-  { name: "Certified Prompt Engineer", org: "Dubai Future Foundation" },
-  { name: "Professional AI Concepts", org: "Microsoft" },
-  { name: "Generative AI Studio", org: "Google" },
+  {
+    name: "Certified Prompt Engineer",
+    org: "Dubai Future Foundation",
+    link: "https://omp.dub.ai/certificate/Bfp662aaUSZR",
+  },
+  {
+    name: "Professional AI Concepts for Developers",
+    org: "Microsoft",
+    link: "https://learn.microsoft.com/api/achievements/share/en-us/AshhadullahZaheer-4933/9RBV774U?sharingId=902929C73FA0C3AE",
+  },
+  {
+    name: "Introduction to Generative AI Studio",
+    org: "Google",
+    link: "https://simpli-web.app.link/e/QoD7zBIX40b",
+  },
 ];
