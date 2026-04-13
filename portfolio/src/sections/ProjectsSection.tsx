@@ -67,8 +67,8 @@ export const ProjectsSection = () => {
                   : {}
               }
               transition={{
-                delay: i * 0.8,
-                duration: 3.1,
+                delay: i * 0.7,
+                duration: 3,
                 ease: [0.22, 1, 0.5, 1],
               }}
             >
