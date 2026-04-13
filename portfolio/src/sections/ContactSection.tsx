@@ -7,7 +7,7 @@ import { Sparkles } from "@react-three/drei";
 import { Button } from "@/components/ui/Button";
 import { SOCIALS } from "@/lib/constants";
 import { sectionReveal } from "@/animations/variants";
-import { Mail, Send } from "lucide-react";
+import { Send } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 type Status = "idle" | "sending" | "sent" | "error";
@@ -86,16 +86,13 @@ export const ContactSection = () => {
       .then(() => {
         setStatus("sent");
         setForm({ name: "", email: "", message: "" });
-
         setTimeout(() => setStatus("idle"), 3500);
       })
-      .catch(() => {
-        setStatus("error");
-      });
+      .catch(() => setStatus("error"));
   };
 
   const inputClass =
-    "w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-sm placeholder:text-white/30 focus:outline-none focus:border-purple-400/60 focus:ring-2 focus:ring-purple-500/20 transition backdrop-blur-xl hover:bg-white/10";
+    "w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white text-sm placeholder:text-white/40 focus:outline-none focus:border-purple-400/60 focus:ring-2 focus:ring-purple-500/20 transition";
 
   return (
     <section
@@ -103,7 +100,7 @@ export const ContactSection = () => {
       ref={sectionRef}
       className="relative py-32 px-6 md:px-20 overflow-hidden"
     >
-      <div className="absolute inset-0 -z-20 pointer-events-none">
+      <div className="absolute inset-0 -z-30 pointer-events-none">
         <Canvas camera={{ position: [0, 0, 1.8] }}>
           <Suspense fallback={null}>
             <Particles />
@@ -111,9 +108,9 @@ export const ContactSection = () => {
         </Canvas>
       </div>
 
-      <div className="absolute inset-0 -z-10 pointer-events-none">
-        <div className="absolute top-1/3 left-1/2 w-[500px] h-[500px] -translate-x-1/2 bg-purple-600/30 blur-[140px] rounded-full animate-pulse" />
-        <div className="absolute bottom-0 right-1/3 w-[400px] h-[400px] bg-indigo-500/20 blur-[140px] rounded-full" />
+      <div className="absolute inset-0 -z-20 pointer-events-none">
+        <div className="absolute top-1/3 left-1/2 w-[420px] h-[420px] -translate-x-1/2 bg-purple-600/10 blur-[180px] rounded-full" />
+        <div className="absolute bottom-0 right-1/3 w-[320px] h-[320px] bg-green-500/10 blur-[180px] rounded-full" />
       </div>
 
       <motion.div
@@ -122,7 +119,7 @@ export const ContactSection = () => {
         initial="hidden"
         animate={inView ? "show" : "hidden"}
       >
-        <div className="backdrop-blur-2xl bg-white/5 border border-white/10 rounded-3xl p-8 md:p-10 shadow-2xl">
+        <div className="relative isolate bg-[#7C3AED]/5 border border-white/10 rounded-3xl p-8 md:p-10 shadow-2xl backdrop-blur-md">
           <div className="mb-8">
             <span className="text-purple-300 text-xs tracking-[0.25em] uppercase">
               Transmission Open
@@ -130,7 +127,7 @@ export const ContactSection = () => {
 
             <h2 className="text-4xl font-bold text-white mt-2">Contact Me</h2>
 
-            <p className="text-white/50 text-sm mt-2">
+            <p className="text-white/60 text-sm mt-2">
               Let’s build something futuristic together.
             </p>
           </div>
@@ -163,7 +160,6 @@ export const ContactSection = () => {
             />
 
             <Button
-              variant="primary"
               onClick={handleSend}
               disabled={
                 status === "sending" ||
@@ -171,15 +167,38 @@ export const ContactSection = () => {
                 !form.email ||
                 !form.message
               }
+              className="
+    relative w-full py-4 rounded-xl isolate
+    /* 1. Solid Bright Purple - No Gradient */
+    !bg-[#7C3AED] 
+    !opacity-100 
+    !backdrop-blur-none
+    
+    text-white font-bold uppercase tracking-widest text-[11px]
+    
+    /* 2. Purple Glow Shadow */
+    shadow-[0_10px_25px_rgba(124,58,237,0.4)]
+    border border-white/20
+    
+    transition-all duration-300
+    hover:scale-[1.02] 
+    active:scale-[0.98]
+    hover:shadow-[0_15px_30px_rgba(124,58,237,0.6)]
+  "
             >
-              <Send size={14} />
-              {status === "sending" ? "Sending..." : "Send Message"}
+              <span className="relative z-10 flex items-center justify-center gap-2 drop-shadow-md">
+                <Send
+                  size={14}
+                  className={status === "sending" ? "animate-pulse" : ""}
+                />
+                {status === "sending" ? "Transmitting..." : "Send Message"}
+              </span>
             </Button>
 
             {status === "sent" && (
-              <motion.p className="text-green-400 text-sm text-center">
+              <p className="text-green-400 text-sm text-center">
                 ✓ Message transmitted successfully
-              </motion.p>
+              </p>
             )}
 
             {status === "error" && (
@@ -194,21 +213,15 @@ export const ContactSection = () => {
               href={SOCIALS.github}
               className="flex items-center gap-2 text-white/50 hover:text-green-400 transition"
             >
-              <FaGithub /> GitHub
-            </a>
-
+              {" "}
+              <FaGithub /> GitHub{" "}
+            </a>{" "}
             <a
               href={SOCIALS.linkedin}
               className="flex items-center gap-2 text-white/50 hover:text-green-400 transition"
             >
-              <FaLinkedin /> LinkedIn
-            </a>
-
-            <a
-              href={SOCIALS.email}
-              className="flex items-center gap-2 text-white/50 hover:text-green-400 transition"
-            >
-              <Mail /> Email
+              {" "}
+              <FaLinkedin /> LinkedIn{" "}
             </a>
           </div>
         </div>
