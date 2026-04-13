@@ -25,18 +25,20 @@ const App = () => {
   }, []);
 
   return (
-    <div className="bg-[#0B0B12] min-h-screen">
+    <div className="bg-[#0B0B12] min-h-screen overflow-x-hidden">
       <SmoothScroll>
         <CursorTrail />
 
-        <motion.div
-          className="fixed top-0 right-0 w-[45%] h-screen pointer-events-none z-10 hidden md:block"
-          style={{
-            transform: `translateY(${progress * 20}px)`,
-          }}
-        >
-          <HeroScene isMobile={isMobile} />
-        </motion.div>
+        {!isMobile && (
+          <motion.div
+            className="fixed top-0 right-0 w-[45%] h-screen pointer-events-none z-10 hidden md:block"
+            style={{
+              transform: `translateY(${progress * 20}px)`,
+            }}
+          >
+            <HeroScene isMobile={isMobile} />
+          </motion.div>
+        )}
 
         <div className="w-full md:w-[60%] relative z-20">
           <Navbar />
