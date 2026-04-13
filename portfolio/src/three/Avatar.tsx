@@ -72,7 +72,7 @@ export const Avatar = () => {
       <primitive
         object={scene}
         scale={2.8}
-        position={[0.1, -2.9, 0]}
+        position={[0.1, -3.15, 0]}
         rotation={[0, 0.56, 0]}
       />
     </group>
