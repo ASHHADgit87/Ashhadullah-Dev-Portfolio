@@ -178,7 +178,7 @@ export const PROJECT_FILTERS = [
 
 export const SOCIALS = {
   github: "https://github.com/ASHHADgit87",
-  linkedin: "https://linkedin.com/in/muhammad-ashhadullah-zaheer",
+  linkedin: "https://www.linkedin.com/in/muhammad-ashhadullah-zaheer-41194a340/",
   email: "mailto:ashhadullah@email.com",
 };
 
