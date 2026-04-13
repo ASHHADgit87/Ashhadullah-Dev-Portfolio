@@ -22,15 +22,15 @@ const ICONS: IconItem[] = [
 
   {
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-    basePos: [2, 1.6, -2.5],
+    basePos: [2, 1.6, -0.6],
   },
   {
     src: "https://nodejs.org/static/images/logo.svg",
-    basePos: [2.1, 0.0, -2.6],
+    basePos: [2.1, 0.0, -0.5],
   },
   {
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
-    basePos: [2, -1.6, -2.5],
+    basePos: [2, -1.6, -0.6],
   },
 ];
 
