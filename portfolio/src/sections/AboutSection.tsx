@@ -1,87 +1,209 @@
 import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
-import { BIO, STATS, STACK_HIGHLIGHTS, CERTS } from "@/lib/constants";
-import { sectionReveal, staggerContainer, fadeUp } from "@/animations/variants";
+import { motion, useInView, useMotionValue, useSpring } from "framer-motion";
+import { Canvas } from "@react-three/fiber";
+import { Sparkles } from "@react-three/drei";
+import {
+  BIO,
+  STATS,
+  STACK_HIGHLIGHTS,
+  CERTS,
+  EDUCATION,
+} from "@/lib/constants";
+import { ExternalLink } from "lucide-react";
 
 export const AboutSection = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  const springX = useSpring(mouseX, { stiffness: 60, damping: 20 });
+  const springY = useSpring(mouseY, { stiffness: 60, damping: 20 });
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    const x = (e.clientX / window.innerWidth - 0.5) * 2;
+    const y = (e.clientY / window.innerHeight - 0.5) * 2;
+
+    mouseX.set(x * 6);
+    mouseY.set(y * 6);
+  };
+
+  const container: any = {
+    hidden: {},
+    show: { transition: { staggerChildren: 0.35 } },
+  };
+
+  const item: any = {
+    hidden: { opacity: 0, x: 140 },
+    show: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 1,
+        ease: [0.22, 1, 0.36, 1],
+      },
+    },
+  };
+
+  const card =
+    "relative p-5 rounded-xl bg-[#111122]/60 border border-white/10 overflow-hidden transition-all duration-300 group";
+
+  const gradientBorder =
+    "absolute inset-0 opacity-0 group-hover:opacity-30 transition-all duration-500 bg-gradient-to-r from-[#7C3AED] via-[#ed7c3a] to-[#7C3AED] blur-2xl";
+
   return (
-    <section id="about" ref={ref} className="py-32 px-8 md:px-20  relative">
-      <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] -translate-x-1/2 -translate-y-1/2 bg-[#7C3AED]/10 blur-[120px] rounded-full pointer-events-none" />
+    <section
+      id="about"
+      ref={ref}
+      onMouseMove={handleMouseMove}
+      className="relative py-32 px-8 md:px-20 overflow-hidden"
+    >
+      <div className="absolute inset-0 -z-10 pointer-events-none">
+        <Canvas camera={{ position: [0, 0, 6] }}>
+          <Sparkles
+            count={220}
+            scale={[14, 7, 18]}
+            size={2.2}
+            speed={0.8}
+            color="#7C3AED"
+            position={[0, 0, -2]}
+          />
+          <Sparkles
+            count={160}
+            scale={[12, 6, 16]}
+            size={2}
+            speed={1}
+            color="#ed7c3a"
+            position={[0, 0, -3]}
+          />
+          <Sparkles
+            count={90}
+            scale={[10, 5, 14]}
+            size={2.4}
+            speed={0.6}
+            color="#ffffff"
+            opacity={0.1}
+            position={[0, 0, -4]}
+          />
+        </Canvas>
+      </div>
 
       <motion.div
-        className="max-w-4xl mx-auto flex flex-col gap-16 relative z-10"
-        variants={sectionReveal}
+        style={{ x: springX, y: springY }}
+        className="max-w-6xl mx-auto grid md:grid-cols-2 gap-20 relative z-10"
+        variants={container}
         initial="hidden"
         animate={inView ? "show" : "hidden"}
       >
-        <div className="flex flex-col gap-2">
-          <span className="text-[#7C3AED] text-xs font-mono tracking-[0.2em] uppercase">
-            About
-          </span>
-          <h2 className="text-4xl font-bold text-white">Who I am</h2>
+        <div className="flex flex-col gap-10">
+          <motion.div variants={item}>
+            <span className="text-[#7C3AED] text-xs font-mono tracking-[0.3em] uppercase italic">
+              About Me
+            </span>
+
+            <h2 className="text-5xl font-bold text-[#7C3AED] mt-3 italic">
+              Hi, I am Ashhadullah
+            </h2>
+          </motion.div>
+
+          <motion.p
+            variants={item}
+            className="text-white/70 text-xl leading-relaxed italic"
+          >
+            {BIO}
+          </motion.p>
+
+          <motion.div variants={item}>
+            <h3 className="text-[#ed7c3a] text-xs font-mono uppercase tracking-widest mb-4 italic">
+              Education
+            </h3>
+
+            {EDUCATION.map((e) => (
+              <div key={e.degree} className={`${card} group`}>
+                <div className={gradientBorder} />
+
+                <p className="text-white font-medium relative z-10 italic">
+                  {e.degree}
+                </p>
+                <p className="text-white/50 text-sm relative z-10 italic">
+                  {e.place}
+                </p>
+                <p className="text-[#ed7c3a] text-xs mt-1 relative z-10 italic">
+                  {e.year}
+                </p>
+              </div>
+            ))}
+          </motion.div>
         </div>
 
-        <p className="text-white/60 text-lg leading-relaxed max-w-2xl">{BIO}</p>
+        <div className="flex flex-col gap-10">
+          <motion.div variants={item}>
+            <h3 className="text-[#ed7c3a] text-xs font-mono uppercase tracking-widest mb-4 italic">
+              Stack Highlights
+            </h3>
 
-        <motion.div
-          className="flex flex-wrap gap-5"
-          variants={staggerContainer}
-          initial="hidden"
-          animate={inView ? "show" : "hidden"}
-        >
-          {STATS.map((stat) => (
-            <motion.div
-              key={stat.label}
-              variants={fadeUp}
-              className="flex flex-col gap-1 bg-[#151528] border border-[#7C3AED]/10 rounded-xl px-6 py-5 min-w-[120px] backdrop-blur-xl shadow-[0_20px_60px_rgba(0,0,0,0.7)] hover:-translate-y-1 transition-all"
-            >
-              <span className="text-3xl font-bold text-[#7C3AED]">
-                {stat.value}
-              </span>
-              <span className="text-white/40 text-sm">{stat.label}</span>
-            </motion.div>
-          ))}
-        </motion.div>
+            <div className="flex flex-col gap-3">
+              {STACK_HIGHLIGHTS.map((s) => (
+                <div key={s.label} className={card}>
+                  <div className={gradientBorder} />
 
-        <div className="flex flex-col gap-2">
-          <h3 className="text-white/30 text-xs font-mono uppercase tracking-widest mb-3">
-            Stack Highlights
-          </h3>
-
-          {STACK_HIGHLIGHTS.map((s) => (
-            <div
-              key={s.label}
-              className="flex items-center gap-4 py-2 border-b border-white/5 text-sm"
-            >
-              <span className="text-[#15803D] font-mono w-20 shrink-0">
-                {s.label}
-              </span>
-              <span className="text-white/40">{s.detail}</span>
+                  <div className="relative z-10 flex items-center gap-4 italic">
+                    <span className="text-[#ed7c3a] font-mono w-24">
+                      {s.label}
+                    </span>
+                    <span className="text-white/60">{s.detail}</span>
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+          </motion.div>
 
-        <div className="flex flex-col gap-2">
-          <h3 className="text-white/30 text-xs font-mono uppercase tracking-widest mb-3">
-            Certifications
-          </h3>
+          <motion.div variants={item}>
+            <h3 className="text-[#ed7c3a] text-xs font-mono uppercase tracking-widest mb-4 italic">
+              Certifications
+            </h3>
 
-          {CERTS.map((c) => (
-            <div
-              key={c.name}
-              className="flex items-center justify-between py-2 border-b border-white/5"
-            >
-              <span className="text-white/70 text-sm font-medium">
-                {c.name}
-              </span>
-              <span className="text-[#15803D]/60 text-xs font-mono">
-                {c.org}
-              </span>
+            <div className="flex flex-col gap-3">
+              {CERTS.map((c) => (
+                <a
+                  key={c.name}
+                  href={c.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`${card} cursor-pointer`}
+                >
+                  <div className={gradientBorder} />
+
+                  <div className="relative z-10 flex items-center justify-between italic">
+                    <span className="text-white/80 text-sm flex items-center gap-2">
+                      {c.name}
+                      <ExternalLink size={14} className="opacity-50" />
+                    </span>
+
+                    <span className="text-[#ed7c3a]/80 text-xs font-mono">
+                      {c.org}
+                    </span>
+                  </div>
+                </a>
+              ))}
             </div>
-          ))}
+          </motion.div>
+
+          <motion.div variants={container} className="grid grid-cols-2 gap-5">
+            {STATS.map((stat) => (
+              <div key={stat.label} className={card}>
+                <div className={gradientBorder} />
+
+                <div className="relative z-10 italic">
+                  <span className="text-3xl font-bold text-[#7C3AED]">
+                    {stat.value}
+                  </span>
+                  <p className="text-white/40 text-sm mt-1">{stat.label}</p>
+                </div>
+              </div>
+            ))}
+          </motion.div>
         </div>
       </motion.div>
     </section>
