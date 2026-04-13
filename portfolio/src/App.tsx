@@ -30,7 +30,7 @@ const App = () => {
         <CursorTrail />
 
         <motion.div
-          className="fixed top-0 right-0 w-[50%] h-screen pointer-events-none z-10 hidden md:block"
+          className="fixed top-0 right-0 w-[45%] h-screen pointer-events-none z-10 hidden md:block"
           style={{
             transform: `translateY(${progress * 20}px)`,
           }}
@@ -38,7 +38,7 @@ const App = () => {
           <HeroScene isMobile={isMobile} />
         </motion.div>
 
-        <div className="w-full md:w-[55%] relative z-20">
+        <div className="w-full md:w-[60%] relative z-20">
           <Navbar />
           <main className="bg-transparent">
             <HeroSection />
