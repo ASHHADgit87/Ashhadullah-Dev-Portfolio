@@ -161,6 +161,24 @@ export const SKILLS: Skill[] = [
     percentage: 96,
     group: "AI",
   },
+  {
+    name: "Lovable",
+    level: "Expert",
+    percentage: 86,
+    group: "AI",
+  },
+  {
+    name: "Orchid",
+    level: "Expert",
+    percentage: 87,
+    group: "AI",
+  },
+  {
+    name: "Copilot",
+    level: "Intermediate",
+    percentage: 97,
+    group: "AI",
+  },
 ];
 
 export const PROJECT_FILTERS = [
