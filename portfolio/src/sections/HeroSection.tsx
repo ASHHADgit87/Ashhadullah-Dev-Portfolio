@@ -36,13 +36,13 @@ export const HeroSection = () => {
   };
 
   const item: any = {
-    hidden: { opacity: 0, x: 350 },
+    hidden: { opacity: 0, x: 600 },
     show: {
       opacity: 1,
       x: 0,
       transition: {
         duration: 2.5,
-        ease: [0.22, 1, 0.5, 1],
+        ease: [0.22, 1, 0.7, 1],
       },
     },
   };

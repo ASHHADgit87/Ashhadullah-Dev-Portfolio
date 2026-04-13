@@ -56,26 +56,21 @@ export const ProjectsSection = () => {
               className="h-full"
               initial={{
                 opacity: 0,
-                y: 40,
-                scale: 0.95,
-                rotateX: 10,
+                x: 350,
               }}
               animate={
                 hasAnimated.current
                   ? {
                       opacity: 1,
-                      y: 0,
-                      scale: 1,
-                      rotateX: 0,
+                      x: 0,
                     }
                   : {}
               }
               transition={{
-                delay: i * 0.6,
-                duration: 1,
-                ease: [0.22, 1, 0.36, 1],
+                delay: i * 0.7,
+                duration: 3,
+                ease: [0.22, 1, 0.5, 1],
               }}
-              style={{ perspective: 1200 }}
             >
               <ProjectCard project={p} />
             </motion.div>
