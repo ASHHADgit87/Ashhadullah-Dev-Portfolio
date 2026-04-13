@@ -163,8 +163,6 @@ export const SKILLS: Skill[] = [
   },
 ];
 
-
-
 export const PROJECT_FILTERS = [
   "All",
   "SaaS",
@@ -177,8 +175,6 @@ export const PROJECT_FILTERS = [
   "Game",
   "Extension",
 ] as const;
-
-
 
 export const SOCIALS = {
   github: "https://github.com/ASHHADgit87",
@@ -193,8 +189,6 @@ export const NAV_LINKS = [
   { label: "Skills", id: "skills" },
   { label: "Contact", id: "contact" },
 ] as const;
-
-
 
 export const BIO = `
 A Software Engineer at NED University, Karachi.
