@@ -9,20 +9,20 @@ type IconItem = {
 const ICONS: IconItem[] = [
   {
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
-    basePos: [-2.7, 1.8, -2],
+    basePos: [-2.2, 1.6, -2],
   },
   {
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
-    basePos: [-2.6, 0, -2],
+    basePos: [-2.1, 0, -2],
   },
   {
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
-    basePos: [-2.7, -1.8, -2],
+    basePos: [-2.2, -1.6, -2],
   },
 
   {
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-    basePos: [2, 1.8, -2.5],
+    basePos: [2, 1.6, -2.5],
   },
   {
     src: "https://nodejs.org/static/images/logo.svg",
@@ -30,7 +30,7 @@ const ICONS: IconItem[] = [
   },
   {
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
-    basePos: [2, -1.8, -2.5],
+    basePos: [2, -1.6, -2.5],
   },
 ];
 
@@ -41,10 +41,10 @@ export const FloatingIcons = () => {
     const updateScale = () => {
       const width = window.innerWidth;
 
-      if (width < 900) setScaleFactor(0.75);
-      else if (width < 1200) setScaleFactor(0.9);
-      else if (width < 1600) setScaleFactor(1);
-      else setScaleFactor(1.2);
+      if (width < 900) setScaleFactor(0.6);
+      else if (width < 1200) setScaleFactor(0.75);
+      else if (width < 1500) setScaleFactor(0.9);
+      else setScaleFactor(1);
     };
 
     updateScale();

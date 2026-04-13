@@ -71,8 +71,8 @@ export const Avatar = () => {
     <group ref={group}>
       <primitive
         object={scene}
-        scale={2.3}
-        position={[0.1, -2.43, 0]}
+        scale={2.8}
+        position={[0.1, -2.9, 0]}
         rotation={[0, 0.56, 0]}
       />
     </group>

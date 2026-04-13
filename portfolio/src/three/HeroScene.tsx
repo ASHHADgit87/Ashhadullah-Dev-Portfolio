@@ -15,8 +15,8 @@ export const HeroScene = ({ isMobile }: HeroSceneProps) => {
   return (
     <Canvas
       camera={{
-        position: [0, 0.5, 7.5],
-        fov: 38,
+        position: [0, 0.5, 8.5], 
+        fov: 42, 
       }}
       gl={{
         antialias: true,
