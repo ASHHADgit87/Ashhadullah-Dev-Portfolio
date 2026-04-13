@@ -171,14 +171,17 @@ export const AboutSection = () => {
                   href={c.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`${card} cursor-pointer`}
+                  className={`${card} cursor-pointer min-h-[80px] flex flex-col justify-center`}
                 >
                   <div className={gradientBorder} />
 
-                  <div className="relative z-10 flex items-center justify-between italic">
-                    <span className="text-white/80 text-sm flex items-center gap-2">
+                  <div className="absolute top-4 right-4 z-20 text-[#ed7c3a] opacity-50 group-hover:opacity-100 transition-opacity">
+                    <ExternalLink size={14} />
+                  </div>
+
+                  <div className="relative z-10 flex flex-col gap-1 pr-8 italic">
+                    <span className="text-white/80 text-sm font-medium leading-tight">
                       {c.name}
-                      <ExternalLink size={14} className="opacity-50" />
                     </span>
 
                     <span className="text-[#ed7c3a]/80 text-xs font-mono">
