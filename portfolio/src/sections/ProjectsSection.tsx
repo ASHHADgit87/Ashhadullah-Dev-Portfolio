@@ -56,7 +56,7 @@ export const ProjectsSection = () => {
               className="h-full"
               initial={{
                 opacity: 0,
-                x: 350,
+                x: 400,
               }}
               animate={
                 hasAnimated.current
@@ -67,8 +67,8 @@ export const ProjectsSection = () => {
                   : {}
               }
               transition={{
-                delay: i * 0.7,
-                duration: 3,
+                delay: i * 0.8,
+                duration: 3.1,
                 ease: [0.22, 1, 0.5, 1],
               }}
             >
