@@ -197,30 +197,30 @@ export const NAV_LINKS = [
 
 
 export const BIO = `
-Software Engineering student at NED University, Karachi.
+A Software Engineer at NED University, Karachi.
 
-Full-stack developer specializing in MERN & PERN stacks with strong frontend and backend expertise.
+I specialize in building modern full-stack applications with strong focus on performance, scalability, and clean architecture. My expertise spans across frontend, backend, and AI-powered systems.
 
-I build scalable AI-powered SaaS platforms, automation systems, and high-performance web applications using modern technologies.
+I have worked extensively with modern technologies including React, TypeScript, Node.js, and multiple database systems. I enjoy transforming complex ideas into real-world, high-quality products.
 
-🚀 Expert in 50+ AI tools for development, productivity, and real-world automation.
+I am also deeply involved in AI tools and automation, leveraging over 50+ tools to enhance productivity, development workflows, and system intelligence.
 
-Focused on clean architecture, performance, and real-world problem solving.
+My goal is to build impactful digital systems that solve real-world problems while maintaining high standards of design, performance, and usability. I also Work on FreeLance Platforms Like Fiverr etc.
 `;
 
 export const STATS = [
-  { value: "20+", label: "Projects Built" },
+  { value: "25+", label: "Projects Built" },
   { value: "50+", label: "AI Tools Mastered" },
-  { value: "3+", label: "Full Stacks" },
-  { value: "100%", label: "Passion Driven" },
+  { value: "1.5 Years", label: "Full Stack Experience" },
+  { value: "20+", label: "skills Mastered" },
 ];
 
 export const STACK_HIGHLIGHTS = [
-  { label: "Frontend", detail: "React, TypeScript, Tailwind" },
-  { label: "Backend", detail: "Node, Express, REST APIs" },
+  { label: "Frontend", detail: "React, TypeScript, Tailwind CSS" },
+  { label: "Backend", detail: "Node.js, Express, REST APIs" },
   { label: "Database", detail: "MongoDB, PostgreSQL, Firebase" },
-  { label: "Auth", detail: "JWT, Clerk, Firebase Auth" },
-  { label: "AI", detail: "LLMs, APIs, Automation Systems" },
+  { label: "AI", detail: "LLM APIs, Automation, AI SaaS" },
+  { label: "DevOps", detail: "Vercel, Netlify, Render" },
 ];
 
 export const CERTS = [
@@ -232,11 +232,19 @@ export const CERTS = [
   {
     name: "Professional AI Concepts for Developers",
     org: "Microsoft",
-    link: "https://learn.microsoft.com/api/achievements/share/en-us/AshhadullahZaheer-4933/9RBV774U?sharingId=902929C73FA0C3AE",
+    link: "https://learn.microsoft.com/api/achievements/share/en-us/AshhadullahZaheer-4933/9RBV774U",
   },
   {
     name: "Introduction to Generative AI Studio",
     org: "Google",
     link: "https://simpli-web.app.link/e/QoD7zBIX40b",
+  },
+];
+
+export const EDUCATION = [
+  {
+    degree: "BE Software Engineering",
+    place: "NED University of Engineering & Technology",
+    year: "June 2024 – June 2028",
   },
 ];
