@@ -37,7 +37,7 @@ export const AboutSection = () => {
     show: {
       transition: {
         staggerChildren: 0.4,
-        delayChildren: 1,
+        delayChildren: 0.5,
       },
     },
   };

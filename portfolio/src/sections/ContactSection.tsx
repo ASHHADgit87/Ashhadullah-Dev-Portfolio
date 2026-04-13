@@ -223,6 +223,9 @@ export const ContactSection = () => {
               {" "}
               <FaLinkedin /> LinkedIn{" "}
             </a>
+            <span className="flex items-center gap-2 text-white/50  transition cursor-default">
+    📞 +92 319 0679245
+  </span>
           </div>
         </div>
       </motion.div>
