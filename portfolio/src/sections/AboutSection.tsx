@@ -2,6 +2,8 @@ import { useRef } from "react";
 import { motion, useInView, useMotionValue, useSpring } from "framer-motion";
 import { Canvas } from "@react-three/fiber";
 import { Sparkles } from "@react-three/drei";
+import type { Variants } from "framer-motion";
+
 import {
   BIO,
   STATS,
@@ -9,6 +11,7 @@ import {
   CERTS,
   EDUCATION,
 } from "@/lib/constants";
+
 import { ExternalLink } from "lucide-react";
 
 export const AboutSection = () => {
@@ -29,19 +32,27 @@ export const AboutSection = () => {
     mouseY.set(y * 6);
   };
 
-  const container: any = {
+  const container: Variants = {
     hidden: {},
-    show: { transition: { staggerChildren: 0.35 } },
+    show: {
+      transition: {
+        staggerChildren: 0.6,
+        delayChildren: 0.2,
+      },
+    },
   };
 
-  const item: any = {
-    hidden: { opacity: 0, x: 140 },
+  const item: Variants = {
+    hidden: {
+      opacity: 0,
+      x: 300,
+    },
     show: {
       opacity: 1,
       x: 0,
       transition: {
-        duration: 1,
-        ease: [0.22, 1, 0.36, 1],
+        duration: 2.5,
+        ease: "easeOut",
       },
     },
   };
@@ -122,7 +133,6 @@ export const AboutSection = () => {
             {EDUCATION.map((e) => (
               <div key={e.degree} className={`${card} group`}>
                 <div className={gradientBorder} />
-
                 <p className="text-white font-medium relative z-10 italic">
                   {e.degree}
                 </p>
@@ -147,7 +157,6 @@ export const AboutSection = () => {
               {STACK_HIGHLIGHTS.map((s) => (
                 <div key={s.label} className={card}>
                   <div className={gradientBorder} />
-
                   <div className="relative z-10 flex items-center gap-4 italic">
                     <span className="text-[#ed7c3a] font-mono w-24">
                       {s.label}
@@ -180,10 +189,9 @@ export const AboutSection = () => {
                   </div>
 
                   <div className="relative z-10 flex flex-col gap-1 pr-8 italic">
-                    <span className="text-white/80 text-sm font-medium leading-tight">
+                    <span className="text-white/80 text-sm font-medium">
                       {c.name}
                     </span>
-
                     <span className="text-[#ed7c3a]/80 text-xs font-mono">
                       {c.org}
                     </span>
@@ -197,7 +205,6 @@ export const AboutSection = () => {
             {STATS.map((stat) => (
               <div key={stat.label} className={card}>
                 <div className={gradientBorder} />
-
                 <div className="relative z-10 italic">
                   <span className="text-3xl font-bold text-[#7C3AED]">
                     {stat.value}
