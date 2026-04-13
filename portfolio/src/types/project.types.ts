@@ -3,15 +3,16 @@ export interface Project {
   title: string;
   stack: string[];
   category: (
-    | "SaaS"
-    | "MERN"
-    | "PERN"
-    | "Firebase"
-    | "Supabase"
-    | "AI"
-    | "3D"
-    | "Game"
-    | "Extension"
+    | 'All'
+    | 'SaaS'
+    | 'MERN'
+    | 'PERN'
+    | 'Firebase'
+    | 'Supabase'
+    | 'AI'
+    | '3D'
+    | 'Game'
+    | 'Extension'
   )[];
   description: string;
   features: string[];
@@ -21,9 +22,9 @@ export interface Project {
 
 export interface Skill {
   name: string;
-  level: "Expert" | "Advanced" | "Intermediate" | "Beginner";
+  level: 'Expert' | 'Advanced' | 'Intermediate' | 'Beginner';
   percentage: number;
-  group: "Languages" | "Frontend" | "Backend" | "DB" | "AI";
+  group: 'Languages' | 'Frontend' | 'Backend' | 'DB' | 'AI';
 }
 
 export interface StatCard {
