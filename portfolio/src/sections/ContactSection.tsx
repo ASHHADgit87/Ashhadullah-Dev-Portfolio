@@ -169,21 +169,21 @@ export const ContactSection = () => {
               }
               className="
     relative w-full py-4 rounded-xl isolate
-    /* 1. Solid Bright Purple - No Gradient */
+    
     !bg-[#7C3AED] 
     !opacity-100 
     !backdrop-blur-none
     
     text-white font-bold uppercase tracking-widest text-[11px]
     
-    /* 2. Purple Glow Shadow */
-    shadow-[0_10px_25px_rgba(124,58,237,0.4)]
+    
     border border-white/20
     
     transition-all duration-300
     hover:scale-[1.02] 
     active:scale-[0.98]
-    hover:shadow-[0_15px_30px_rgba(124,58,237,0.6)]
+    
+    hover:shadow-[0_10px_25px_rgba(124,58,237,0.5)]
   "
             >
               <span className="relative z-10 flex items-center justify-center gap-2 drop-shadow-md">
