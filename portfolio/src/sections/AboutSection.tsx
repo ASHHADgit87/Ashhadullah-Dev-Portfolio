@@ -36,8 +36,8 @@ export const AboutSection = () => {
     hidden: {},
     show: {
       transition: {
-        staggerChildren: 0.4,
-        delayChildren: 0.5,
+        staggerChildren: 0.3,
+        delayChildren: 0.2,
       },
     },
   };
@@ -51,7 +51,7 @@ export const AboutSection = () => {
       opacity: 1,
       x: 0,
       transition: {
-        duration: 2,
+        duration: 1,
         ease: "easeOut",
       },
     },
