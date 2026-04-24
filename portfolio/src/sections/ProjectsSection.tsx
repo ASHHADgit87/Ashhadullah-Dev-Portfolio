@@ -67,9 +67,9 @@ export const ProjectsSection = () => {
                   : {}
               }
               transition={{
-                delay: i * 0.7,
+                delay: i * 0.5,
                 duration: 3,
-                ease: [0.22, 1, 0.5, 1],
+                ease: [0.2, 1, 0.3, 1],
               }}
             >
               <ProjectCard project={p} />
