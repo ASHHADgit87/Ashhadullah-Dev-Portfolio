@@ -1,48 +1,67 @@
 # Ashhadullah's Portfolio
 
-This **Portfolio** is a futuristic, high-performance 3D developer portfolio built to showcase full-stack engineering skills of Muhammad Ashhadullah Zaheer. It combines immersive visuals, real-time interactions, and smooth animations to deliver a premium, professional experience.
+This portfolio is a futuristic, high-performance **3D developer showcase website** built to present the full-stack engineering skills of Muhammad Ashhadullah Zaheer. It combines immersive 3D visuals, smooth animations, and real-time interactions to deliver a premium developer experience.
 
 ---
 
-## 🏛️ Architecture
+# Architecture
 
-**This portfolio follows a Component-Based Frontend Architecture**, ensuring scalability, maintainability, and clean separation of UI, animations, and 3D logic.
+The portfolio follows a **Component-Based Frontend Architecture**, ensuring modularity, scalability, and clean separation between UI, animations, and 3D rendering logic.
 
----
-
-## ✨ Features
-
-### 🎨 Frontend Experience
-- Immersive **3D Avatar Scene** with cursor-based head tracking  
-- Dynamic **particle systems and floating tech icons** using Three.js  
-- Smooth scrolling and cinematic animations powered by Framer Motion  
-- Custom glowing UI with futuristic purple-green theme  
-- Fully responsive design (Desktop, Tablet, Mobile optimized)  
-
-### 📩 Communication
-- Functional **contact form powered by EmailJS**  
-- Real-time message status (sending, success, error handling)  
-- Integrated social links (GitHub, LinkedIn, Email)  
+| Layer | Responsibility |
+|---|---|
+| UI Layer | React components and layout structure |
+| 3D Layer | Three.js / React Three Fiber scenes |
+| Animation Layer | Framer Motion transitions and effects |
+| Service Layer | EmailJS integration for contact form |
 
 ---
 
-## 🛠️ Tech Stack
+# Features
 
-- **Frontend:** React.js, TypeScript, Tailwind CSS  
-- **3D & Graphics:** Three.js, React Three Fiber, Drei  
-- **Animations:** Framer Motion  
-- **Email Service:** EmailJS  
-- **Icons & UI:** Lucide React, React Icons  
+## Frontend Experience
+
+| Feature | Description |
+|---|---|
+| 3D Avatar Scene | Interactive character with cursor-based head tracking |
+| Particle System | Floating tech elements using Three.js |
+| Smooth Animations | Cinematic transitions powered by Framer Motion |
+| Futuristic UI | Custom glowing purple-green themed interface |
+| Responsive Design | Fully optimized for all screen sizes |
 
 ---
 
-## 🚀 Live Demo
+## Communication System
+
+| Feature | Description |
+|---|---|
+| Contact Form | EmailJS-powered message system |
+| Status Feedback | Real-time sending, success, and error states |
+| Social Integration | Direct links to GitHub, LinkedIn, and Email |
+
+---
+
+# Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Frontend | React.js, TypeScript, Tailwind CSS |
+| 3D Graphics | Three.js, React Three Fiber, Drei |
+| Animations | Framer Motion |
+| Email Service | EmailJS |
+| UI Icons | Lucide React, React Icons |
+
+---
+
+# Live Demo
 
 https://ashhadullah-portfolio.vercel.app/
 
 ---
 
-## 👨‍💻 Creator & Developer
+# Creator & Developer
 
-- **Muhammad Ashhadullah Zaheer**  
-- 🔗 LinkedIn: https://www.linkedin.com/in/muhammad-ashhadullah-zaheer-41194a340/  
+**Muhammad Ashhadullah Zaheer**
+
+LinkedIn: https://www.linkedin.com/in/muhammad-ashhadullah-zaheer-41194a340/
+```
